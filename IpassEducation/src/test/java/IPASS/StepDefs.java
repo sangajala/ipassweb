@@ -20,6 +20,7 @@ public class StepDefs {
     @When("^he search for a course with title \"([^\"]*)\"$")
     public void he_search_for_a_course_with_title(String arg1) throws Throwable {
 
+        homePage.search();
     }
 
     @When("^select the university \"([^\"]*)\" and navigate to the course \"([^\"]*)\"$")
