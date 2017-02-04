@@ -31,4 +31,7 @@ public class HomePage extends BasePage{
         WebDriverUtil.isTextPresent("Sign in");
       //menu-item-1825
     }
+
+    public void search() {
+    }
 }
