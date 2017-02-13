@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
  */
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"pretty"},
-        tags = {"@end2end"},
+        tags = {"@third"},
         features = "src/test/resources"
 )
 public class RunTest {
@@ -39,8 +39,8 @@ public class RunTest {
         }
     }
 
-    @AfterClass
-    public static void stop() {
-        BrowserFactory.closeBrowser();
-    }
+//    @AfterClass
+//    public static void stop() {
+//        BrowserFactory.closeBrowser();
+//    }
 }
