@@ -72,12 +72,14 @@ public void selectViewCourse_SocialMedia()
 
 public void selectMap()
 {
-    BrowserFactory.getDriver().switchTo().frame(0);
+    BrowserFactory.getDriver().switchTo().frame(BrowserFactory.getDriver().findElement(By.tagName("iframe")));
     WebDriverUtil.sleep(6);
-    //BrowserFactory.getDriver().findElement(By.linkText("View larger map")).click();
+    BrowserFactory.getDriver().findElement(By.linkText("View larger map")).click();
    //link_ViewMap.click();
-    WebDriverUtil.mouseHover(link_ViewMap);
-    System.out.println("Clicked on view larger map link");
+    WebDriverUtil.sleep(6);
+    BrowserFactory.getDriver().switchTo().defaultContent();
+//    WebDriverUtil.mouseHover(link_ViewMap);
+//    System.out.println("Clicked on view larger map link");
 }
 
 public void selectApplyNow(){
@@ -96,4 +98,8 @@ public void selectCourse(String course)
 public void selectVisitWebsite(){
     button_ViewWebsiteUniversityPage.click();
 }
+
+    public void selectViewCourse(String courseName) {
+        WebDriverUtil.gotoViewCourses(courseName);
+    }
 }

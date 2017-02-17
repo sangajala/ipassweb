@@ -60,8 +60,8 @@ public class StepDefs {
     }
 
     @And("^navigates to \"([^\"]*)\"$")
-    public void navigatesTo(String SocialStudies) {
-        universityHomePage.selectViewCourse_SocialMedia();
+    public void navigatesTo(String courseName) {
+        universityHomePage.selectViewCourse(courseName);
     }
 
     @When("^he select \"([^\"]*)\"$")
@@ -89,8 +89,8 @@ public class StepDefs {
     }
 
     @Then("^he should see list of courses with titles \"([^\"]*)\"$")
-    public void heShouldSeeListOfCoursesWithTitles(String ArtsAndComm) {
-//        Assert.assertTrue(WebDriverUtil.isTextPresent(ArtsAndComm));
+    public void heShouldSeeListOfCoursesWithTitles(String course) {
+        Assert.assertTrue(WebDriverUtil.isTextPresent(course));
     }
 
     @When("^user selects view all courses$")

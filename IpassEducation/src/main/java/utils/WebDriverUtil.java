@@ -70,6 +70,19 @@ public class WebDriverUtil {
 
     }
 
+    public static void gotoViewCourses(String courseName)
+    {
+        for(WebElement element:BrowserFactory.getDriver().findElements(By.className("skill_section")))
+        {
+            if(element.getText().contains(courseName))
+            {
+
+                BrowserFactory.getDriver().get(element.findElement(By.tagName("a")).getAttribute("href"));
+                return;
+            }
+        }
+    }
+
     public static void selectByLinkText(By by){
         BrowserFactory.getDriver().findElement(by).click();
     }
