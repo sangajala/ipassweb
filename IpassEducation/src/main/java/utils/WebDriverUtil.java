@@ -4,6 +4,8 @@ import org.omg.CORBA.TIMEOUT;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -58,5 +60,17 @@ public class WebDriverUtil {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void mouseHover(WebElement webElement)
+    {
+        Actions action = new Actions(BrowserFactory.getDriver());
+      //  action.moveToElement(webElement).perform();
+        action.moveToElement(webElement).click().perform();
+
+    }
+
+    public static void selectByLinkText(By by){
+        BrowserFactory.getDriver().findElement(by).click();
     }
 }

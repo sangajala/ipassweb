@@ -1,5 +1,6 @@
 package IPASS;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -11,7 +12,7 @@ import utils.WebDriverUtil;
  */
 public class HomePage extends BasePage{
 
-    @FindBy(linkText= "Login ")
+    @FindBy(xpath = "//li[@id='menu-item-1825']/ul/li[1]/a")
     private WebElement login;
 
     @FindBy(css = "#menu-item-1825 a i")
@@ -24,12 +25,16 @@ public class HomePage extends BasePage{
 
     public void login() {
 
-        loginMenu.click();
-        WebDriverUtil.sleep(3);
-        login.click();
-        WebDriverUtil.sleep(3);
-        WebDriverUtil.isTextPresent("Sign in");
-      //menu-item-1825
+       // WebDriverUtil.mouseHover(loginMenu);
+       // WebDriverUtil.sleep(1);
+        WebDriverUtil.mouseHover(login);
+        WebDriverUtil.sleep(4);
+        //loginMenu.click();
+       // WebDriverUtil.sleep(3);
+        //login.click();
+        //WebDriverUtil.waitForElementToBeClickableAndClick(By.xpath("//li[@id='menu-item-1825']/ul/li[1]/a"));
+        //WebDriverUtil.sleep(3);
+        //WebDriverUtil.isTextPresent("Sign in");
     }
 
     public void search() {
