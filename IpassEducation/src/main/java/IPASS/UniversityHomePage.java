@@ -9,9 +9,6 @@ import utils.WebDriverUtil;
 
 import java.util.List;
 
-/**
- * Created by shiyasshahul on 07/02/2017.
- */
 public class UniversityHomePage extends BasePage {
     @FindBy(id="Name")
     WebElement searchbox;
